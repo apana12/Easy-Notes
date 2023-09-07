@@ -12,17 +12,19 @@
                 <a class="btn btn-secondary" href="{{ route('homes.index') }}" enctype="multipart/form-data">Back</a>
             </div>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <div class="dropdown1" style="padding-right:20px;">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Semester
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{ route('bca_sem.1sem') }}">First Semester</a></li>
-                        <li><a class="dropdown-item" href="{{ route('bca_sem.2sem') }}">Second Semester</a></li>
-                    </ul>
-                </div>
+                @auth
+                    <div class="dropdown1" style="padding-right:20px;">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Semester
+                        </button>
 
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{{ route('bca_sem.1sem') }}">First Semester</a></li>
+                            <li><a class="dropdown-item" href="{{ route('bca_sem.2sem') }}">Second Semester</a></li>
+                        </ul>
+                    </div>
+                @endauth
                 <div class="dropdown1" style="padding-right:20px;">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
