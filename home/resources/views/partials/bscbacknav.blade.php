@@ -6,5 +6,5 @@
                     <use xlink:href="#bootstrap" />
                 </svg>
             </a>
-            <div class="pull-right" style="padding-right:15px;">git branch -M main
-                g
+            <div class="pull-right" style="padding-right:15px;">
+
