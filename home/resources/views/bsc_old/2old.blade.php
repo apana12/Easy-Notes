@@ -1,4 +1,4 @@
-@extends('layouts.bscmains')
+@extends('layouts.bscbackmains')
 
 @section('content')
     <h1 style="text-align: center; margin-top:20px;"> Second Semester of BSc.Csit Old Questions!!</h1>

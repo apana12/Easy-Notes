@@ -1,4 +1,4 @@
-@extends('layouts.bcamains')
+@extends('layouts.bcabackmains')
 
 @section('content')
     <h1 style="text-align: center; margin-top:20px;"> Second Semester of BCA Old Questions!!</h1>

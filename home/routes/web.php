@@ -24,8 +24,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('index', HomeController::class);
+
+// for Quiz
 Route::resource('quiz_game', QuizController::class);
+Route::get('index1', [QuizController::class, 'index'])->name('quizs.quiz');
+// Route::get('bsc2', [QuizController::class, 'bsc2'])->name('quizs.bsc2_quiz');
+
+// for Quizquestions
+Route::get('ques2', [QuizController::class, 'ques2'])->name('quizs.ques2');
+
 Route::resource('feedback', FeedbackController::class);
+// Route::post('submit', [FeedbackController::class, 'submitFeedback'])->name('homes.submit');
+Route::post('submit', [FeedbackController::class, 'submitFeedback'])->name('homes.submit');
+
+
 
 // For Bca
 Route::resource('BCA',BcaController::class);
@@ -65,6 +77,8 @@ Route::get('oldb', [BscController::class, 'secondold'])->name('bsc_old.2old');
 Route::resource('Profile', ProfileController::class);
 Route::get('profile1', [ProfileController::class, 'index'])->name('user.profile');
 Route::post('profile2', [ProfileController::class, 'store'])->name('user.profile.store');
+
+
 
 
 // for login setup
@@ -108,6 +122,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         // For Bsc Semester
         Route::get('sema', [BscController::class, 'firstsem'])->name('bsc_sem.1sem');
         Route::get('semb', [BscController::class, 'secondsem'])->name('bsc_sem.2sem');
+
+
+        Route::get('bca1', [QuizController::class, 'bca'])->name('quizs.bca_quiz');
+        Route::get('bim1', [QuizController::class, 'bim'])->name('quizs.bim_quiz');
+        Route::get('bsc1', [QuizController::class, 'bsc'])->name('quizs.bsc_quiz');
 
 
     });

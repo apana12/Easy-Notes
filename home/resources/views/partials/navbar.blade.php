@@ -78,8 +78,8 @@
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Search..."
-                    aria-label="Search">
+                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search"
+                    id="search">
             </form>
 
             @auth
@@ -101,3 +101,22 @@
 
 
 </div>
+<script>
+    $('#search').on('keyup', function() {
+        var query = $(this).val();
+        $.ajax({
+            url: "{{ route('homes.index') }}",
+            type: "GET",
+            data: {
+                'query': query
+            },
+            success: function(data) {
+                $('#facultyList').html(data);
+            }
+        })
+    });
+    $('body').on('click', 'li', function() {
+        var value = $(this).text();
+        //do what ever you want
+    });
+</script>

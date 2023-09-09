@@ -1,4 +1,4 @@
-@extends('layouts.bscmains')
+@extends('layouts.bscbackmains')
 
 @section('content')
     {{-- {{Subject starts from here(card)}} --}}

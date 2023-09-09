@@ -1,4 +1,4 @@
-@extends('layouts.bimains')
+@extends('layouts.bimbackmains')
 
 @section('content')
 <h1 style="text-align: center; margin-top:20px;"> Second Semester of BIM syllabus!!</h1>
