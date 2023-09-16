@@ -7,4 +7,8 @@
                 </svg>
             </a>
             <div class="pull-right" style="padding-right:15px;">
-
+                <a class="btn btn-secondary" href="{{ route('faculties.bsc') }}" enctype="multipart/form-data">Back</a>
+            </div>
+        </div>
+    </div>
+</header>

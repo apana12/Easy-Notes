@@ -101,7 +101,7 @@
 
 
 </div>
-<script>
+{{-- <script>
     $('#search').on('keyup', function() {
         var query = $(this).val();
         $.ajax({
@@ -119,4 +119,4 @@
         var value = $(this).text();
         //do what ever you want
     });
-</script>
+</script> --}}

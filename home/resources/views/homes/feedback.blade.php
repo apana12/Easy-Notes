@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.feed-mains')
 
 @section('content')
     {{-- <form method="post" enctype="text/plain">

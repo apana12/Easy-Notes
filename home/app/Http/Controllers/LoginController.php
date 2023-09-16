@@ -28,9 +28,9 @@ class LoginController extends Controller
 
         Auth::login($user, $request->get('remember'));
 
-        if($request->get('remember')):
-            $this->setRememberMeExpiration($user);
-        endif;
+        // if($request->get('remember')):
+        //     $this->setRememberMeExpiration($user);
+        // endif;
 
         return $this->authenticated($request, $user);
     }

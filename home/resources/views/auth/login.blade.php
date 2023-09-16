@@ -37,9 +37,11 @@
         @include('auth.partials.copy')
     </form>
 
-    <script>
+    {{-- <script>
         function myFunction() {
             alert("Congratulations!! You are now part of Easy Notes Family.");
         }
-    </script>
-@endsection
+    </script> --}}
+
+
+@section('content')

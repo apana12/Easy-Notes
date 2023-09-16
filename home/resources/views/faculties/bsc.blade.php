@@ -6,8 +6,11 @@
             <div class="card" style="width: 18rem; ">
                 <img src="{{ asset('asset/First Sem.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <a class="card-text" href="{{ route('bsc_sem.1sem') }}">You can find all the notes related to First
-                        Semester.</a>
+                     <form action="{{ route('opens.bscopen') }}" method="GET">
+                        @csrf
+                        <button type="submit" style="btn btn-secondary">You can find all the notes related to First
+                            Semester.</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -15,8 +18,11 @@
             <div class="card" style="width: 18rem;">
                 <img src="{{ asset('asset/Second Sem.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <a class="card-text" href="{{ route('bsc_sem.2sem') }}">You can find all the notes related to Second
-                        Semester.</a>
+                    <form action="{{ route('opens.bsc2open') }}" method="GET">
+                        @csrf
+                        <button type="submit" style="btn btn-secondary">You can find all the notes related to Second
+                            Semester.</button>
+                    </form>
                 </div>
             </div>
         </div>

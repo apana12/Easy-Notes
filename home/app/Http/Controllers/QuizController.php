@@ -11,10 +11,12 @@ class QuizController extends Controller
     {
         return view('quizs.quiz');
     }
+
     public function bca()
     {
         return view('quizs.bca_quiz');
     }
+    
     public function bim()
     {
         return view('quizs.bim_quiz');

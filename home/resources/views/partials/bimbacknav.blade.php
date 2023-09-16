@@ -8,6 +8,8 @@
             </a>
             <div class="pull-right" style="padding-right:15px;">
                 <a class="btn btn-secondary" href="{{ route('faculties.bim') }}" enctype="multipart/form-data">Back</a>
+
+                {{-- <a class="btn btn-secondary" href="{{ route('bim_sem.open') }}" enctype="multipart/form-data">Open</a> --}}
             </div>
         </div>
     </div>

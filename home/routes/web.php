@@ -9,6 +9,7 @@ use App\HTTP\Controllers\BcaController;
 use App\HTTP\Controllers\BimController;
 use App\HTTP\Controllers\BscController;
 use App\HTTP\Controllers\LoginController;
+use App\HTTP\Controllers\GuestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -101,6 +102,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          */
         Route::get('/login', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');
+
+         /**
+         * Store Interaction Route
+         */
+        Route::post('/store-interaction', 'GuestController@storeInteraction')->name('store.interaction');
+        // Route::post('/store-bsc_old_interaction', 'BSCOldController@storeInteraction')->name('bsc_old.store.interaction');
     });
 
 
@@ -114,14 +121,23 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         // For BCA Semester
         Route::get('sem1', [BcaController::class, 'firstsem'])->name('bca_sem.1sem');
         Route::get('sem2', [BcaController::class, 'secondsem'])->name('bca_sem.2sem');
+        Route::get('bcaopen', [BcaController::class, 'firstsemafterOpen'])->name('opens.bcaopen');
+        Route::get('bcaopen1', [BcaController::class, 'SecondsemafterOpen'])->name('opens.bca2open');
+
+
 
         // For Bim Semester
         Route::get('1sem', [BimController::class, 'firstsem'])->name('bim_sem.1sem');
         Route::get('2sem', [BimController::class, 'secondsem'])->name('bim_sem.2sem');
+        Route::get('bimopen', [BimController::class, 'firstsemafterOpen'])->name('opens.bimopen');
+        Route::get('1bimopen', [BimController::class, 'SecondsemafterOpen'])->name('opens.bim2open');
+
 
         // For Bsc Semester
         Route::get('sema', [BscController::class, 'firstsem'])->name('bsc_sem.1sem');
         Route::get('semb', [BscController::class, 'secondsem'])->name('bsc_sem.2sem');
+        Route::get('bscopen', [BscController::class, 'firstsemafterOpen'])->name('opens.bscopen');
+        Route::get('bscopena', [BscController::class, 'SecondsemafterOpen'])->name('opens.bsc2open');
 
 
         Route::get('bca1', [QuizController::class, 'bca'])->name('quizs.bca_quiz');

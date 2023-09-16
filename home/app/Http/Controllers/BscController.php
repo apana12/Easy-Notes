@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\bscsem;
+use App\Models\guest;
 use Illuminate\Http\Request;
 
 class BscController extends Controller
@@ -10,12 +11,36 @@ class BscController extends Controller
     {
         return view('faculties.bsc');
     }
+
     public function firstsem()
     {
         return view('bsc_sem.1sem');
     }
+    public function firstsemafterOpen() //for content
+    {
+        $firstSemData = true;
+        $secSemData = false;
+        bscsem::create([
+        'first_sem' => $firstSemData,
+        'sec_sem' => $secSemData,
+
+    ]);
+        return view('bsc_sem.1sem');
+    }
+
     public function secondsem()
     {
+        return view('bsc_sem.2sem');
+    }
+    public function secondsemafterOpen()
+    {
+            $firstSemData = false;
+            $secSemData = true;
+            bscsem::create([
+            'first_sem' => $firstSemData,
+            'sec_sem' => $secSemData,
+
+        ]);
         return view('bsc_sem.2sem');
     }
     public function firstsyl()
