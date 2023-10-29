@@ -16,16 +16,21 @@ class BimController extends Controller
     {
         return view('bim_sem.1sem');
     }
-    public function firstsemafterOpen() //for content
+    public function firstsemafterOpen()
     {
-        $firstSemData = true;
-        $secSemData = false;
-        bimsem::create([
-        'first_sem' => $firstSemData,
-        'sec_sem' => $secSemData,
+    $firstSemData = true;
+    $secSemData = false;
+    $userId = auth()->id();
+    // dd($userId);
 
-    ]);
-        return view('bim_sem.1sem');
+    // Create a new Bimsem record with user_id and other data
+    $bimsem = new bimsem;
+    $bimsem->user_id = $userId;
+    $bimsem->first_sem = $firstSemData;
+    $bimsem->sec_sem = $secSemData;
+    $bimsem->save();
+
+    return view('bim_sem.1sem');
     }
 
     public function secondsem()
@@ -36,17 +41,20 @@ class BimController extends Controller
     {
         $firstSemData = false;
         $secSemData = true;
-        bimsem::create([
-        'first_sem' => $firstSemData,
-        'sec_sem' => $secSemData,
+        $userId = auth()->id();
 
-    ]);
-        return view('bim_sem.2sem');
+        // Create a new Bimsem record with user_id and other data
+        $bimsem = new bimsem;
+        $bimsem->user_id = $userId;
+        $bimsem->first_sem = $firstSemData;
+        $bimsem->sec_sem = $secSemData;
+        $bimsem->save();
+
+    return view('bim_sem.2sem');
     }
 
     public function firstsyl()
     {
-        // return view('bim_syl.1syl')
         return view('bim_syl.1syl');
     }
     public function secondsyl()

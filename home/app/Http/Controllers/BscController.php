@@ -20,11 +20,15 @@ class BscController extends Controller
     {
         $firstSemData = true;
         $secSemData = false;
-        bscsem::create([
-        'first_sem' => $firstSemData,
-        'sec_sem' => $secSemData,
+        $userId = auth()->id();
 
-    ]);
+        // Create a new Bimsem record with user_id and other data
+        $bscsem = new bscsem;
+        $bscsem->user_id = $userId;
+        $bscsem->first_sem = $firstSemData;
+        $bscsem->sec_sem = $secSemData;
+        $bscsem->save();
+
         return view('bsc_sem.1sem');
     }
 
@@ -34,13 +38,17 @@ class BscController extends Controller
     }
     public function secondsemafterOpen()
     {
-            $firstSemData = false;
-            $secSemData = true;
-            bscsem::create([
-            'first_sem' => $firstSemData,
-            'sec_sem' => $secSemData,
+        $firstSemData = true;
+        $secSemData = false;
+        $userId = auth()->id();
 
-        ]);
+        // // Create a new Bscsem record with user_id and other data
+        $bscsem = new bscsem;
+        $bscsem->user_id = $userId;
+        $bscsem->first_sem = $firstSemData;
+        $bscsem->sec_sem = $secSemData;
+        $bscsem->save();
+
         return view('bsc_sem.2sem');
     }
     public function firstsyl()

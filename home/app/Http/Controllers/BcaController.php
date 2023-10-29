@@ -17,13 +17,16 @@ class BcaController extends Controller
     }
        public function firstsemafterOpen() //for content
     {
-        $firstSemData = true;
-        $secSemData = false;
-        bcasem::create([
-        'first_sem' => $firstSemData,
-        'sec_sem' => $secSemData,
+        $firstSemData = false;
+        $secSemData = true;
+        // $userId = auth()->id();
 
-    ]);
+        // Create a new Bcasem record with user_id and other data
+        $bcasem = new bcasem;
+        // $bcasem->user_id = $userId;
+        $bcasem->first_sem = $firstSemData;
+        $bcasem->sec_sem = $secSemData;
+        // $bcasem->save();
         return view('bca_sem.1sem');
     }
     public function secondsem()
@@ -34,11 +37,14 @@ class BcaController extends Controller
     {
         $firstSemData = false;
         $secSemData = true;
-        bcasem::create([
-        'first_sem' => $firstSemData,
-        'sec_sem' => $secSemData,
+        // $userId = auth()->id();
 
-    ]);
+        // Create a new Bcasem record with user_id and other data
+        $bcasem = new bcasem;
+        // $bcasem->user_id = $userId;
+        $bcasem->first_sem = $firstSemData;
+        $bcasem->sec_sem = $secSemData;
+        // $bcasem->save();
         return view('bca_sem.2sem');
     }
 

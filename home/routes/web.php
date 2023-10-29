@@ -131,7 +131,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('2sem', [BimController::class, 'secondsem'])->name('bim_sem.2sem');
         Route::get('bimopen', [BimController::class, 'firstsemafterOpen'])->name('opens.bimopen');
         Route::get('1bimopen', [BimController::class, 'SecondsemafterOpen'])->name('opens.bim2open');
-
+        Route::post('/bimsem', 'BimsemController@store')->name('bimsem.store');
 
         // For Bsc Semester
         Route::get('sema', [BscController::class, 'firstsem'])->name('bsc_sem.1sem');
@@ -146,4 +146,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
 
     });
+});
+
+
+Route::get('/test12' ,function(){
+    dd(\Hash::make('admin'));
+    //org password $2y$10$izzaXWVZIaBrt4U/RjH4xu8LPeu.o6V1ECy4JnDX4v42MhFzMHcuS
+});
+
+
+Route::group(['prefix' => 'admin'], function () { // Also add middleware auth here
+    Voyager::routes();
+    //Add here
+    
+
 });

@@ -47,4 +47,6 @@ class FeedbackController extends Controller
     return redirect()->route('homes.submit')->with('success', 'Feedback submitted successfully');
     }
 
+    
+
 }

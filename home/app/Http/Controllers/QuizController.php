@@ -16,7 +16,7 @@ class QuizController extends Controller
     {
         return view('quizs.bca_quiz');
     }
-    
+
     public function bim()
     {
         return view('quizs.bim_quiz');
@@ -27,7 +27,7 @@ class QuizController extends Controller
     }
     // public function bsc2()
     // {
-    //     return view('quizs.bsc2_quiz');
+        // return view('quizs.bsc2_quiz');
     // }
 
 }
